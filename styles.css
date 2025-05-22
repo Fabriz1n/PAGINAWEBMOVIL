@@ -1,0 +1,475 @@
+/* Tipografía y estilo base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #066B04;
+  color: #066B04;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.logo {
+  color: #066B04;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: #066B04;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(6, 107, 4, 0.1);
+  border-radius: 4px;
+}
+
+/* Submenú */
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 250px;
+  padding: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.has-dropdown .dropdown li {
+  list-style: none;
+  width: 100%;
+}
+
+.has-dropdown .dropdown li a {
+  display: block;
+  padding: 12px 20px;
+  color: #222;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.has-dropdown .dropdown li a:hover {
+  background-color: #f0f0f0;
+  border-radius: 6px;
+}
+
+/* Mostrar submenú cuando se activa */
+.has-dropdown .dropdown.show {
+  display: block;
+}
+
+
+/* ENCABEZADO CON CARRUSEL */
+.hero {
+  background-color: transparent;  /* evita que lo tape */
+  position: fixed;
+  z-index: 1;
+}
+.carousel {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Botones */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 200px;
+  }
+  .carousel-btn {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+  }
+}
+
+
+/* SECCIONES */
+.sectiones {
+  padding: 60px 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.section-header h2 span {
+  color: #066B04; /* verde moderno */
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.card {
+  width: 320px;
+  height: 680px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 15px 10px;
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Contenedor de imagen fijo */
+.card .img-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .img-container img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* SECCIONES DE NOTICIAS */ 
+.latest-grid {
+  padding: 60px 40px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #066B04;
+  letter-spacing: 2px;
+}
+
+.news-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.news-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.news-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.news-text h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.news-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.news-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.news-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* LIGA DEPORTIVA*/
+
+.liga-deportiva {
+  padding: 60px 40px;
+  background-color: #f4f4f4;
+}
+
+.liga-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.liga-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.liga-texto {
+  max-width: 600px;
+}
+
+.liga-texto h2 {
+  font-size: 2.5rem;
+  color: #066B04;
+  margin-bottom: 15px;
+}
+
+.liga-texto p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* CONTACTANOS */
+.contacto {
+  background-color: #1e2a38;
+  color: white;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.contacto-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contacto h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #00ff9c;
+}
+
+.contacto .subtexto {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.contacto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.contacto-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background-color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.contacto-item h3 {
+  font-size: 1.4rem;
+  color: #00ff9c;
+  margin-bottom: 10px;
+}
+
+.contacto-item p {
+  font-size: 1rem;
+  color: #eee;
+  margin: 6px 0;
+}
+
+/* CONTACTANOS */
+.contacto {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.contacto-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  color: #066B04;
+  margin-bottom: 10px;
+}
+
+.subtexto {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #066B04;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #066B04;
+}
+
+button[type="submit"] {
+  background-color: #066B04;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #054d02;
+}
